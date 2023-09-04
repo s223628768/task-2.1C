@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Todo App</h1>
+        <input v-model="newTask" @keyup.enter="addTask" placeholder="Add a new task">
+        <ul>
+            <li v-for="(task, index) in tasks" :key="index">
+                {{ task }}
+                <button @click="completeTask(index)">Complete</button>
+                <button @click="deleteTask(index)">Delete</button>
+            </li>
+        </ul>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.0.11/dist/vue.global.prod.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
